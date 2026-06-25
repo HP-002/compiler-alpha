@@ -1,0 +1,27 @@
+#object files
+*.o
+lex.yy.c
+
+#executables
+runner
+compiler
+runner.out
+alpha
+ 
+*.tok
+*.st
+*.asc
+*.ir
+*.s
+
+!lib/*.s
+
+#bison output
+grammar.output
+grammar.tab.c
+grammar.tab.h
+
+/.vscode
+
+teststeps/
+scripts/
