@@ -1,0 +1,9 @@
+type int2int : integer -> integer
+function multi : int2int
+multi(x) := {
+    [ integer : y ]
+    
+    y := + 2 ; x := * 3 ; y := / 4 ;
+    
+    return y ;
+}

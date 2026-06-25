@@ -1,0 +1,24 @@
+(* should execute cleanly *)
+type IntArray : 50 -> integer
+type int2int : integer -> integer
+function compute : int2int
+compute(x) := {
+    [
+        integer : i ;
+        integer : result ;
+        address : ptr
+    ]
+    i := 0 ;
+    result := -x + i * (5 / 2) % 3 ;
+    ptr := reserve IntArray ;
+    
+    while (i < 10 & !(result = 0)) {
+        if (result < 0 | x = i) then {
+            result := result + 1 ;
+        } else {
+            result := result.ptr - 1 ;
+        }
+        i := i + 1 ;
+    }
+    return result ;
+}

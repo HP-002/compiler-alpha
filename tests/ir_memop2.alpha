@@ -1,0 +1,13 @@
+type void : integer -> integer
+function entry : void
+
+type IntArr : 1 -> integer
+
+entry(arg) := {
+    [ IntArr : arr ]
+
+    arr := reserve arr(5);
+    arr := release arr;
+
+    return 0;
+}

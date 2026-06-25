@@ -1,0 +1,37 @@
+(* Invalid AS Tests *)
+
+type Point : [integer : x; integer : y]
+type PointOp : Point -> integer
+type IntOp : integer -> integer
+type void : integer -> integer
+
+function bad_primitive : IntOp
+function bad_arity_short : PointOp
+function bad_arity_long : PointOp
+function bad_types : PointOp
+function entry : void
+
+entry(arg) := { return 0; }
+
+(* AS with primitive type *)
+bad_primitive as (x) := {
+    return x;
+}
+
+(* Less identifiers *)
+bad_arity_short as (x) := {
+    return x;
+}
+
+(* Many identifiers *)
+bad_arity_long as (x, y, z) := {
+    return x + y;
+}
+
+bad_types as (px, py) := {
+    [ Boolean : b1 ]
+    
+    b1 := px;
+    
+    return px;
+}

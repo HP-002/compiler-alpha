@@ -1,0 +1,23 @@
+(* valid simple statements and assignables *)
+type Point : [integer: x; integer: y]
+type PointArray : 1 -> Point
+type Matrix : 2 -> integer
+
+entry(arg) := {
+    [ integer: a; Point: p; PointArray: arr; Matrix: m ]
+    
+    a := 5;
+    
+    p.x := 10;
+    p.y := a * 2;
+    
+    arr(0) := p;
+    
+    arr(0).x := 15;
+    
+    m(0, 1) := 100;
+    
+    a := m._1 + m._2;
+    
+    return a + arr(0).y;
+}

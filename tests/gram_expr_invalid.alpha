@@ -1,0 +1,18 @@
+(* invalid expressions *)
+type IntArray : 1 -> integer
+
+entry(arg) := {
+    [ integer: a; IntArray: arr ]
+    
+    a := 5 + ;
+    
+    a := 10 * / 2;
+    
+    a := (5 + 3 * 2;
+    
+    arr := reserve 10;
+    
+    a := 5 + (a := 2);
+    
+    return 0;
+}

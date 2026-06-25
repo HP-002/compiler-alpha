@@ -1,0 +1,27 @@
+(* Valid *)
+
+type Int2Int : integer -> integer
+
+function compute : Int2Int
+
+compute ( input ) := {
+    [ integer : x ]
+    
+    x := input;
+    
+    if ( x < 10 ) then {
+        [ integer : y ]
+        
+        y := x + 1;
+        return y;
+    } else {
+        [ 
+            integer : x; (* Shadows the outer x *)
+            integer : z
+        ]
+        
+        x := 0;
+        z := x;
+        return z;
+    }
+}

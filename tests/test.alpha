@@ -1,0 +1,45 @@
+#include "library.alpha"
+
+type Point : [integer : x; character : c]
+type Point2integer : Point -> integer
+
+function square : integer2integer
+function printPoint : Point2integer
+function printString: string2integer
+
+printString(s) := {
+    [integer : size; integer : i]
+    size := s._1;
+    i := 0;
+    while (i < size) {
+        [integer : x]
+        x := printCharacter(s(i));
+    }
+    return 0;
+}
+
+entry(arg) := {
+    [integer : i; Point : p]
+    i := 10;
+    i := printInteger(square(i));
+    p := reserve p;
+    p.x := 9999;
+    p.c := 'A';
+    i := printPoint(p);
+    i := printString("Hi");
+    return 0;
+}
+
+square(x) := {
+    return x * x;
+}
+
+printPoint(p) := {
+    [integer : i]
+    i := printCharacter('_');
+    i := printCharacter(p.c);
+    i := printCharacter('_');
+    i := printInteger(p.x);
+    i:= printCharacter('\n');
+    return 0;
+}

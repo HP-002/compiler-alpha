@@ -1,0 +1,5 @@
+function wrong : integer
+
+wrong as (x, y) := {
+    return 0;
+}

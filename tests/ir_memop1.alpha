@@ -1,0 +1,15 @@
+type void : integer -> integer
+function entry : void
+
+type Point : [integer : x; integer : y]
+
+entry(arg) := {
+    [ Point : p; integer : a ]
+
+    p := reserve p;
+    p.x := 5;
+    a := p.y;
+    p := release p;
+
+    return a;
+}

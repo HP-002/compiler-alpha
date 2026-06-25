@@ -1,0 +1,19 @@
+type int2int : integer -> integer
+
+function add : int2int
+function add2 : int2int
+
+add(y) := {
+    return y + y;
+}
+
+type void : integer -> integer
+function entry : void
+
+entry(arg) := {
+    [ integer : a; integer : b ]
+    a := add(5);
+    
+    a := add(add(10));
+
+}

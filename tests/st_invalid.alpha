@@ -1,0 +1,27 @@
+(* Unknown Type *)
+
+(* 1. Undefined Types *)
+type BadArray : 5 -> unknownType
+type BadFunc  : integer -> missingType
+
+function myFunc : doesNotExist
+
+(* 2. Duplicate Declarations *)
+type Point : [
+    integer : x;
+    integer : x  (* ERROR: Duplicate variable in same scope *)
+]
+
+type ValidOp : integer -> integer
+function process : ValidOp
+function process : ValidOp (* ERROR: Duplicate function prototype *)
+
+process (val) := {
+    [
+        integer : a;
+        Boolean : a  (* ERROR: Duplicate variable in same scope *)
+    ]
+    
+    a := 1;
+    return a;
+}

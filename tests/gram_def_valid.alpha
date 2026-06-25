@@ -1,0 +1,29 @@
+(* valid definitions *)
+
+type Point : [ integer: x; integer: y ]
+type Point:[integer:x;integer:y]
+
+type IntArray : 1 -> integer
+type Matrix : 2 -> integer
+
+type IntStream : integer -> IntStream
+
+type Int2Int : integer -> integer
+
+square(x) := {
+    return x * x;
+}
+
+power(x) := {
+    x := x*x/x;
+    x := x/x*x;
+    return y * y*y;
+}
+
+multiply as (a, b) := {
+    return a*b;
+}
+
+entry(arg) := {
+    return 0;
+}

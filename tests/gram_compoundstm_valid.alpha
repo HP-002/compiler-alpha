@@ -1,0 +1,33 @@
+(* valid compound statements *)
+entry(arg) := {
+    [ integer: x; boolean: flag ]
+    
+    x := 10;
+    flag := true;
+
+    while (x < 20) {
+        x := x + 1;
+    }
+
+    if (flag = true) then {
+        x := 0;
+    } else {
+        x := 100;
+    }
+
+    while (flag) {
+        if (x < 50) then {
+            x := x * 2;
+        } else {
+            flag := false;
+        }
+    }
+
+    {
+        [ integer: y ]
+        y := x;
+        x := y + 1;
+    }
+
+    return 0;
+}

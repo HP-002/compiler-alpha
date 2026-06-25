@@ -1,0 +1,18 @@
+(* Functions *)
+
+type MathOp : integer -> integer
+
+(* External and internal prototypes *)
+external function systemInit : MathOp
+function square : MathOp
+
+(* Function definition with a local scope *)
+square ( n ) := {
+    [
+        integer : result;
+        MathOp : callback
+    ]
+    
+    result := n * n;
+    return result;
+}

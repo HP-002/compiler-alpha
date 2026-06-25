@@ -1,0 +1,16 @@
+(* valid prototypes *)
+
+type string2int: string -> integer
+type int2int: integer -> integer
+type voidFunc: integer -> integer
+
+function square : int2int
+
+external function printInteger : int2int
+
+external function printCharacter : string2int
+external function reserveMemory : voidFunc
+
+entry(arg) := {
+    return 0;
+}

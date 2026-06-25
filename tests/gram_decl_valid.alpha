@@ -1,0 +1,22 @@
+(* valid blocks and declarations *)
+type Point : [integer: x; integer: y]
+
+simple_func(x) := {
+    return x;
+}
+
+func_one_decl(y) := {
+    [ integer: local_var ]
+    local_var := y * 2;
+    return local_var;
+}
+
+func_multi_decl(z) := {
+    [ integer: a; boolean: flag; Point: p ]
+    a := 5;
+    return a;
+}
+
+entry(arg) := {
+    return 0;
+}

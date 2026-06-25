@@ -1,0 +1,23 @@
+type Unary : integer -> integer
+function entry : Unary
+
+entry(x) := {
+    [
+        integer : a;
+        Boolean : flag
+    ]
+    if (5) then {
+        a := 1;
+    } else {
+        a := 2;
+    }
+    while (a + 1) {
+        a := a - 1;
+    }
+    if (flag) then {
+        a := 0;
+    } else {
+        a := 1;
+    }
+    return a;
+}

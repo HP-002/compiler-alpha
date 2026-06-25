@@ -1,0 +1,48 @@
+(* INVALID Function Type Checking Tests (Expected to fail) *)
+
+type IntOp : integer -> integer
+type HigherOrder : integer -> IntOp
+type void : integer -> integer
+
+function negate : IntOp
+function get_operator : HigherOrder
+function entry : void
+
+entry(arg) := {
+    [
+        integer : i1; 
+        Boolean : b1;
+        IntOp : f_int
+    ]
+
+    (* Wrong number of arguments *)
+    i1 := negate();
+    i1 := negate(10, 20);
+    f_int := get_operator(1, 2);
+
+    (* Wrong Parameter Type *)
+    i1 := negate(true);
+    i1 := negate('a');
+    f_int := get_operator(null);
+
+    (* Wrong Return Type *)
+    b1 := negate(10);
+    i1 := get_operator(5);
+    f_int := is_positive;
+
+    (* Non-Functions calls *)
+    i1 := i1(10);
+    i1 := b1(true);
+
+    (* Chaining Functions *)
+    i1 := get_operator(5)(10)(15);
+}
+
+(* Invalid Return Statements *)
+negate(x) := {
+    return true;
+}
+
+get_operator(seed) := {
+    return 100;
+}

@@ -1,0 +1,22 @@
+(* Boolean Assignments *)
+type void : integer -> integer
+function entry : void
+
+entry(arg) := {
+    [ Boolean : x; Boolean : y; Boolean : z; integer : i; integer : j ]
+
+    x := true;
+    y := false;
+
+    z := x | (x & y);
+
+    z := x & (x & y);
+
+    z := x & (x | y);
+
+    z := x & (x | y);
+
+    z := !x | y;
+
+    return 0;
+}

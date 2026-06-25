@@ -1,0 +1,20 @@
+type Unary : integer -> integer
+function entry : Unary
+
+entry(x) := {
+    [
+        integer : a;
+        integer : b;
+        Boolean : flag
+    ]
+    a := 1 + 2 * 3;
+    b := a - 4 / 2 % 3;
+    flag := true & false | !true;
+    if (a < b) then {
+        a := b;
+    } else {
+        b := a;
+    }
+    flag := a = b;
+    return a;
+}

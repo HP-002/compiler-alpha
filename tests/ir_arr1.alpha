@@ -1,0 +1,16 @@
+type void : integer -> integer
+function entry : void
+
+type IntArr : 1 -> integer
+type MultArr : 2 -> integer
+
+entry(arg) := {
+    [ MultArr : arr ; integer : x ]
+    
+    x := arr._0;
+
+    x := arr._1;
+    x := arr._2;
+
+    return 0;
+}

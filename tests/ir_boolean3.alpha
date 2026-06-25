@@ -1,0 +1,21 @@
+(* Boolean Assignments *)
+type void : integer -> integer
+function entry : void
+
+entry(arg) := {
+    [ Boolean : x; Boolean : y; Boolean : z ]
+
+    x := true;
+    y := false;
+    z := true;
+
+    z := x | y | z;
+
+    z := x & y & z;
+
+    z := x & y | z;
+
+    z := x | y & z; 
+
+    return 0;
+}

@@ -1,0 +1,13 @@
+type void : integer -> integer
+function entry : void
+
+entry(arg) := {
+    [ integer : a; integer : b; integer : c ]
+
+    a := 10;
+    b := 20;
+
+    c := a + b * 5 - (a / 2);
+    
+    return c;
+}

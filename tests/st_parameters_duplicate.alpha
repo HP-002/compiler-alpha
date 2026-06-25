@@ -1,0 +1,6 @@
+type Unary : integer -> integer
+function dup : Unary
+
+dup as (x, x) := {
+    return x;
+}

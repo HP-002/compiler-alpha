@@ -1,0 +1,25 @@
+(* Arrays & Record *)
+
+type IntArray : 10 -> integer
+type Point : [ integer : x ; integer : y ]
+type MathOp : integer -> integer
+
+external function printf : MathOp
+
+function transform : MathOp
+
+transform ( val ) := {
+    [
+        Point : p1;
+        IntArray : arr;
+        integer : result
+    ]
+    
+    p1.x := val;
+    p1.y := 0;
+    
+    arr(0) := p1.x;
+    result := arr(0);
+    
+    return result;
+}

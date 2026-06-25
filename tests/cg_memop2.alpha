@@ -1,0 +1,21 @@
+type Point : [integer : x; integer : y]
+type point2int : Point -> integer
+function sum : point2int
+function sum2 : point2int
+sum as (px, py) := {
+    return px + py;
+}
+sum2(p) := {
+    return p.x + p.y;
+}
+
+type void : string -> integer
+function entry : void
+entry(arg) := {
+    [ Point : p; integer : a ]
+    a := sum(10, 20);
+
+    a := sum(p);
+
+    a := sum2(p);
+}

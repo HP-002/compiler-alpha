@@ -1,0 +1,29 @@
+type integer2integer : integer -> integer
+type character2integer : character -> integer
+type integer2address : integer -> address
+type iarr : 1 -> integer
+external function printInteger : integer2integer
+external function printCharacter : character2integer
+function entry : integer2integer
+entry(arg) := {
+    [character : c1; integer : i1; character : c2; integer : i2; Boolean : flag; iarr : arr; integer : t]
+    c1 := 'A';
+    i1 := 1111;
+    c2 := 'B';
+    i2 := 9999;
+    flag := (i1 < i2);
+    arr := reserve arr(1);
+    arr(0) := 9999;
+
+    t := printCharacter(c1);
+    t := printInteger(i1);
+    t := printCharacter(c2);
+    if (flag) then {
+        t := printInteger(arr(0));
+    } else {
+        t := printInteger(0);
+    }
+    t := printCharacter('\n');
+
+    return 0;
+}

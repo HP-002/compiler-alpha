@@ -1,0 +1,22 @@
+type IntOp : integer -> integer
+function entry : IntOp
+
+entry(arg) := {
+    [ integer : x; integer : y ]
+
+    x := 10;
+
+    if (x < 10) then {
+        
+        if (x = 5) then {
+            y := 1;
+        } else {
+            y := 2;
+        }
+
+    } else {
+        y := 3;
+    }
+
+    return y;
+}

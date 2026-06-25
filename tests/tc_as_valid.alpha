@@ -1,0 +1,33 @@
+(* Valid AS Tests *)
+
+type Point : [integer : x; integer : y; Boolean : is_valid]
+type PointOp : Point -> integer
+type void : integer -> integer
+
+function process_point : PointOp
+function entry : void
+
+entry(arg) := {
+    [ Point : p1; integer : i1 ]
+    
+    p1 := reserve p1;
+    p1.x := 10;
+    p1.y := 20;
+    p1.is_valid := true;
+
+    i1 := process_point(p1);
+}
+
+(* Using AS to unpack the 3 fields into local variables px, py, and valid *)
+process_point as (px, py, valid) := {
+    [ integer : result ]
+    
+    if (valid) then {
+        (* px and py are correctly identified as integers by the compiler *)
+        result := px + py; 
+    } else {
+        result := 0;
+    }
+    
+    return result;
+}

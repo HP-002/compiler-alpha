@@ -1,0 +1,14 @@
+type void : integer -> integer
+function entry : void
+
+type IntArr : 1 -> integer
+type MultArr : 2 -> integer
+
+entry(arg) := {
+    [ MultArr : arr ; integer : x ]
+    (* | 2 | 2 | [0,0] | [0,1] | [1,0] | [1,1] *)
+    (* Element should be at byte 20 *)
+    x := arr(1, 1);
+
+    return 0;
+}

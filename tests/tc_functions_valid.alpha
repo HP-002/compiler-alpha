@@ -1,0 +1,70 @@
+(* Valid Function Tests *)
+
+type IntOp : integer -> integer
+type BoolOp : Boolean -> Boolean
+type HigherOrder : integer -> IntOp
+type void : integer -> integer
+type FuncArg : IntOp -> integer
+
+function negate : IntOp
+function is_positive : BoolOp
+function get_operator : HigherOrder
+function apply_func : FuncArg
+function get_null_op : HigherOrder
+function entry : void
+
+entry(arg) := {
+    [
+        integer : i1; 
+        Boolean : b1;
+        IntOp : f_int;
+        BoolOp : f_bool;
+        HigherOrder : f_high
+    ]
+
+    (* Function Assignments *)
+    f_int := negate;
+    f_bool := is_positive;
+    f_high := get_operator;
+    f_int := null;
+    f_high := null;
+
+    (* Comparisons with null *)
+    b1 := f_int = null;
+    b1 := null = f_bool;
+    b1 := negate = null;
+    b1 := get_operator = null;
+
+    (* Function Calls *)
+    i1 := negate(10);
+    i1 := f_int(20);
+    b1 := is_positive(true);
+
+    f_int := get_operator(5);
+    i1 := get_operator(5)(10);
+    i1 := f_high(5)(10);
+
+    i1 := negate(i1 + 50 * 2);
+    i1 := negate(negate(10));
+
+    i1 := apply_func(negate);
+    i1 := apply_func(null);
+
+    f_int := get_null_op(1);
+}
+
+negate(x) := {
+    return -x;
+}
+
+get_operator(seed) := {
+    return negate;
+}
+
+apply_func(func_ptr) := {
+    return 0;
+}
+
+get_null_op(seed) := {
+    return null; 
+}

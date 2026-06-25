@@ -1,0 +1,25 @@
+type integer2integer : integer -> integer
+external function printInteger : integer2integer
+
+function entry : integer2integer
+entry(arg) := {
+    [integer : a; integer : b; Boolean : x; integer : t]
+    
+    a := 10;
+    b := 20;
+
+    if (a < b) then {
+        t := printInteger(111); 
+    } else {
+        t := printInteger(0);   
+    }
+
+    x := a = 10;
+    if (x) then {
+        t := printInteger(222); 
+    } else {
+        t := printInteger(0);   
+    }
+
+    return 0;
+}

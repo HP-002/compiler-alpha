@@ -1,0 +1,29 @@
+(* valid expressions *)
+type IntArray : 1 -> integer
+
+entry(arg) := {
+    [ integer: a; boolean: flag; IntArray: arr ]
+    
+    a := 42;
+    a := -42;
+    flag := true;
+    flag := false;
+    
+    a := 10 + 5 * 2 - 8 / 4 % 3;
+    
+    a := (10 + 5) * (2 - 8);
+    
+    a := -a;
+    
+    flag := !flag;
+    flag := !(a < 0);
+    
+    flag := a < 10 & !flag | a = 5;
+    
+    arr := reserve IntArray(10);
+    a := release arr;
+    
+    a := arr(a * 2 + 1) + arr(0); 
+    
+    return 0;
+}

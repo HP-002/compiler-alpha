@@ -1,0 +1,14 @@
+type string2integer : string -> integer
+function entry : string2integer
+entry(arg) := {
+    [string : str]
+    str := reserve str(3);
+    
+    str(0) := 'A';
+    str(1) := 'B';
+    str(2) := 'C';
+
+    str(0) := str(2);
+    
+    return 0;
+}

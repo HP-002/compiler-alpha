@@ -1,0 +1,22 @@
+(* Error Recovery Stress Test *)
+type int2int : integer -> integer
+function broken : int2int
+broken(a) := {
+    [
+        (* ERROR 1: Missing colon. *)
+        integer badVar ;
+        Boolean : flag ;
+        
+        (* ERROR 2: Array size must be C_INTEGER. *)
+        type badArr : "ten" -> integer ;
+        character : letter
+    ]
+    
+    (* ERROR 3: Horrible math expression. *)
+    flag := a + * / 2 ;
+    
+    (* This valid statement MUST survive the blast radius. *)
+    letter := 'Z' ;
+    
+    return a ;
+}

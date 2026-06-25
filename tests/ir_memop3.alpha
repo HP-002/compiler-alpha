@@ -1,0 +1,17 @@
+type void : integer -> integer
+function entry : void
+
+type Vec3 : [integer : x; integer : y; integer : z]
+
+entry(arg) := {
+    [ Vec3 : v; integer : sum ]
+
+    v := reserve v;
+    v.x := 1;
+    v.y := 2;
+    v.z := 3;
+    sum := v.x + v.y + v.z;
+    v := release v;
+
+    return sum;
+}

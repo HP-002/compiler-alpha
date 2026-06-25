@@ -1,0 +1,17 @@
+type integer2integer : integer -> integer
+external function printInteger : integer2integer
+function square : integer2integer
+square(x) := {
+    return x * x;
+}
+
+function entry : integer2integer
+entry(arg) := {
+    [integer : val; integer : t]
+    
+    val := 5;
+    val := square(val);
+    t := printInteger(val); 
+
+    return 0;
+}

@@ -1,0 +1,37 @@
+(* Invalid Misc Tests *)
+
+type Point : [integer : x; integer : y]
+type Circle : [Point : center; integer : radius]
+
+type Grid3D : 3 -> integer
+
+type IntOp : integer -> integer
+
+function bad_access : IntOp
+
+bad_access(n) := {
+    [
+        Circle : c1;
+        Grid3D : space;
+        integer : i1
+    ]
+
+    c1.center.z := 10;
+    
+    c1.radius.x := 5;
+    
+    i1 := c1.center;
+
+
+    space(1, 2) := 10;
+    
+    space(1, 2, 3, 4) := 10;
+    
+    space(1, c1.center, 3) := 5;
+
+    i1 := arg;
+    
+    result := 10;
+
+    return 0;
+}

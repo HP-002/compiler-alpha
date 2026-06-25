@@ -1,0 +1,20 @@
+(* invalid definitions *)
+
+type Point [ integer: x; integer: y ]
+type Point : [ integer: x integer: y ]
+
+type IntArray : 1 integer
+
+type BadFunc : integer -> 1
+
+square(x) {
+    return x * x;
+}
+
+cube x := {
+    return x * x * x;
+}
+
+entry(arg) := {
+    return 0;
+}

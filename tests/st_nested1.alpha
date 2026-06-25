@@ -1,0 +1,48 @@
+(* Nested Scopes *)
+
+type VoidFn : integer -> integer
+
+function compute : VoidFn
+
+compute ( val ) := {
+    [
+        integer : x;
+        integer : y
+    ]
+    
+    x := 10;
+    y := 20;
+    
+    if (x < y) then {
+        [
+            integer : x; (* Shadows outer x *)
+            string  : msg
+        ]
+        x := 100;
+        msg := "inner branch";
+        return x;
+    } else {
+        [
+            Boolean : x; (* Shadows outer x with a different type *)
+            address : ptr
+        ]
+        x := true;
+        return y;
+    }
+    
+    while (y < 0) {
+        [
+            character : y (* Shadows outer y *)
+        ]
+        y := 'a';
+        return 0;
+    }
+    
+    (* Standalone generic block scope *)
+    {
+        [ integer : z ]
+        z := x + y;
+    }
+    
+    return x;
+}

@@ -1,0 +1,15 @@
+type string: 1 -> character
+type string2int: string -> integer
+type int2int: integer -> integer
+
+function id : int2int
+function idAs : int2int
+function entry : string2int
+
+id(x) := { return x; }
+idAs as (x) := { return x; }
+
+entry(arg) := {
+  z := id(5);
+  return z;
+}

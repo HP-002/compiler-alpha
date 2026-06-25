@@ -1,0 +1,10 @@
+type Unary : integer -> integer
+function pair : Unary
+
+pair as (x, y) := {
+    [
+        integer : z
+    ]
+    z := x;
+    return z;
+}

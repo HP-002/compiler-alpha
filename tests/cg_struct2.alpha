@@ -1,0 +1,17 @@
+type void : string -> integer
+function entry : void
+entry(arg) := {
+    [integer : a1; Boolean : b; character : c; integer : a2]
+    
+    a1 := 10;
+    a2 := 11;
+    
+    b := false;
+    if (a1 < a2) then {
+        c := 'A';
+    } else {
+        b := true;
+    }
+
+    return 0;
+}

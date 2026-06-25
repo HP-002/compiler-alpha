@@ -1,0 +1,4 @@
+type myString : 1 -> myChar
+type intToInt : myInt -> myInt
+function square : intToInt
+external function printIt : intToInt

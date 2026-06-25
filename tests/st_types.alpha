@@ -1,0 +1,21 @@
+(* Types *)
+
+(* Array of 10 integers *)
+type IntArray : 10 -> integer
+
+(* Function mapping type *)
+type Int2Int : integer -> integer
+type Addr2Bool : address -> Boolean
+
+(* Record type with its own field scope *)
+type Node : [
+    integer : id;
+    address : next;
+    Boolean : isActive
+]
+
+(* Complex record using previously defined types *)
+type Graph : [
+    IntArray : vertices;
+    Node : root
+]

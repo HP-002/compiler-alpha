@@ -1,0 +1,13 @@
+type void : string -> integer
+function entry : void
+entry(arg) := {
+    [integer : a; integer : b; integer : c]
+    
+    a := 10;
+    b := 11;
+    c := a + 1;
+    c := b - a;
+    c := a / b;
+
+    return 0;
+}

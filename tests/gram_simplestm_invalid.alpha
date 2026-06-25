@@ -1,0 +1,16 @@
+(* invalid simple statements and assignables *)
+entry(arg) := {
+    [ integer: a; integer: b ]
+    
+    a = 5;
+    
+    b := 10
+    
+    arr[0] := 5;
+    
+    return;
+    
+    5 + 5 := a;
+    
+    return 0;
+}

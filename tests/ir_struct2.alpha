@@ -1,0 +1,13 @@
+type IntOp : integer -> integer
+function entry : IntOp
+
+entry(arg) := {
+    [ integer : a; integer : b; integer : c ]
+
+    a := 5;
+    b := 2;
+
+    c := -(a * b) + (10 / b);
+
+    return c;
+}

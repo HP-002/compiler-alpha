@@ -1,0 +1,23 @@
+type IntOp : integer -> integer
+function entry : IntOp
+
+entry(arg) := {
+    [ integer : x; integer : y ]
+
+    x := 10;
+    y := 0;
+
+    if (x < 5) then {
+        y := y + 1;
+    } else {
+        y := y + 2;
+    }
+
+    if (x = 10) then {
+        y := y + 10;
+    } else {
+        y := y + 20;
+    }
+
+    return y;
+}

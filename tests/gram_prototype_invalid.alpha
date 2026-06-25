@@ -1,0 +1,14 @@
+(* invalid prototypes *)
+type int2int: integer -> integer
+
+function square int2int
+
+function external printInteger : int2int
+
+external printCharacter : int2int
+
+function integer : int2int
+
+entry(arg) := {
+    return 0;
+}

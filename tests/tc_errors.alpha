@@ -1,0 +1,18 @@
+type Unary : integer -> integer
+function entry : Unary
+
+entry(x) := {
+    [
+        integer : a;
+        Boolean : flag
+    ]
+    a := 1 + true;
+    a := flag * 2;
+    flag := 5 & true;
+    flag := false | 3;
+    a := !5;
+    a := -flag;
+    flag := 1 < true;
+    a := flag;
+    return a;
+}

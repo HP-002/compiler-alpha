@@ -1,0 +1,15 @@
+type integer2integer : integer -> integer
+function square : integer2integer
+square(x) := {
+    [integer : i]
+    i := x * x;
+    return i;
+}
+function entry : integer2integer
+entry(arg) := {
+    [integer : i; integer : j; integer : t]
+    i := square(10);
+    j := square(20);
+    t := square(square(30));
+    return 0;
+}

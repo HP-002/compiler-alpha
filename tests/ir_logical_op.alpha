@@ -1,0 +1,16 @@
+type void : integer -> integer
+function entry : void
+
+entry(arg) := {
+    [ Boolean : a; Boolean : b; Boolean : c ]
+
+    a := true;
+    b := false;
+
+    a := a & b;
+    a := a | b;
+
+    a := a & (a | b);
+    
+    return 0;
+}

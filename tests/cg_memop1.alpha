@@ -1,0 +1,17 @@
+type iarr : 1 -> integer
+type string2integer : string -> integer
+function entry : string2integer
+entry(arg) := {
+    [iarr : arr; integer : i; integer : sum]
+    arr := reserve arr(3);
+    arr(0) := 10;
+    arr(1) := 20;
+    arr(2) := 30;
+    i := arr._0;
+    i := arr._1;
+    arr(i) := arr(i) + 5;
+    i := 2;
+    arr(i) := arr(i) * 2;
+    sum := arr(0) + arr(1) + arr(2);
+    return sum;
+}

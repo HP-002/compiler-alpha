@@ -1,0 +1,16 @@
+(* invalid miscellaneous*)
+
+entry(arg) := {
+    [ integer: x ]
+    
+    (* empty sblock *)
+    while (x < 10) { }
+    
+    (* empty argument list *)
+    x := process();
+    
+    (* double semicolons *)
+    x := 5;;
+    
+    return 0;
+}
